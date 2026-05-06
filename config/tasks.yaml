@@ -1,0 +1,24 @@
+gather_news_task:
+  description: >
+    Search for the latest AI news (within the last 24-48 hours) focusing on:
+    1. **GenAI Tools:** New software/apps for video, coding (e.g., Cursor, Claude Code), and productivity.
+    2. **Corporate Moves:** Product launches from OpenAI (e.g., the reported AI smartphone), 
+       Google, Meta, Microsoft, Oracle, Anthropic, and major Asian firms like DeepSeek or Baidu.
+    3. **Global Trends:** Major AI infrastructure investments or regulatory shifts in the EU/US/Asia.
+    4. **Model Advancements:** New LLM releases, multimodal updates, or efficiency breakthroughs.
+  expected_output: >
+    A categorized list of at least 7-10 major AI developments with 
+    detailed summaries, key specs of new models, and source links.
+  agent: global_ai_researcher
+
+briefing_task:
+  description: >
+    Transform the raw research into a 'Morning AI Dashboard'. 
+    The report MUST include:
+    - **Top 3 News:** The most critical updates of the day.
+    - **The Model Tracker:** A section dedicated to new model benchmarks or releases.
+    - **Product Spotlight:** Review of a new GenAI tool or consumer product.
+    - **Global Pulse:** What's happening in AI outside of Silicon Valley.
+  expected_output: >
+    A structured, high-impact markdown report optimized for daily reading.
+  agent: tech_product_analyst

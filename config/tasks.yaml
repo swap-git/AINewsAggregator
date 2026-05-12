@@ -1,5 +1,10 @@
 gather_news_task:
   description: >
+    Today is {current_date}. Only consider articles and pages published on or between {start_date}
+    and {end_date} (inclusive). Do not use retrospective roundups, "month in review," or year/month
+    recap posts from earlier periods (e.g. "April 2024 AI news") unless they contain genuinely new
+    updates within the window above. Prefer primary sources and recent journalism over SEO recap pages.
+    Topic focus: {topic}.
     Search for the latest AI news (within the last 24-48 hours) focusing on:
     1. **GenAI Tools:** New software/apps for video, coding (e.g., Cursor, Claude Code), and productivity.
     2. **Corporate Moves:** Product launches from OpenAI (e.g., the reported AI smartphone), 
@@ -13,6 +18,8 @@ gather_news_task:
 
 briefing_task:
   description: >
+    The briefing date is {current_date}; reflect only developments supported by the research from
+    {start_date} through {end_date}. Title the report for this date (not a past month/year).
     Transform the raw research into a 'Morning AI Dashboard'. 
     The report MUST include:
     - **Top 3 News:** The most critical updates of the day.

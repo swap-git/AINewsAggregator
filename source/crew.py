@@ -1,5 +1,6 @@
 import os
 import yaml
+from datetime import date, timedelta
 from pathlib import Path
 from crewai import Agent, Task, Crew, Process
 from crewai_tools import SerperDevTool, ScrapeWebsiteTool
@@ -48,6 +49,15 @@ daily_ai_crew = Crew(
 # 6. Kickoff the process
 if __name__ == "__main__":
     print("Starting Daily AI News Gathering...")
-    result = daily_ai_crew.kickoff()
+    end = date.today()
+    start = end - timedelta(days=2)
+    result = daily_ai_crew.kickoff(
+        inputs={
+            "topic": "Global AI news",
+            "current_date": end.isoformat(),
+            "start_date": start.isoformat(),
+            "end_date": end.isoformat(),
+        }
+    )
     print("\n--- DAILY BRIEFING COMPLETE ---\n")
     print(result)

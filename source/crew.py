@@ -1,5 +1,6 @@
 import os
 import yaml
+
 from datetime import date, timedelta
 from pathlib import Path
 from crewai import Agent, Task, Crew, Process
@@ -49,6 +50,7 @@ daily_ai_crew = Crew(
 # 6. Kickoff the process
 if __name__ == "__main__":
     print("Starting Daily AI News Gathering...")
+
     end = date.today()
     start = end - timedelta(days=2)
     result = daily_ai_crew.kickoff(
@@ -59,5 +61,7 @@ if __name__ == "__main__":
             "end_date": end.isoformat(),
         }
     )
+
+    result = daily_ai_crew.kickoff()
     print("\n--- DAILY BRIEFING COMPLETE ---\n")
     print(result)
